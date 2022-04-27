@@ -12,8 +12,6 @@ protocol NetworkServiceProtocol {
     
 }
 
-
 class NetworkService: NetworkServiceProtocol {
-    
     
 }
