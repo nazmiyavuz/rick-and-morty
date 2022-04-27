@@ -5,8 +5,10 @@ target 'RickAndMorty' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'SwiftLint'
-
   # Pods for RickAndMorty
+
+  # Helper
+  pod 'SwiftLint'
+  pod 'SnapKit', '~> 5.6.0'
 
 end
