@@ -17,7 +17,7 @@ protocol BaseViewModelEventSource: AnyObject {
     var showLoading: VoidClosure? { get set }
     var hideLoading: VoidClosure? { get set }
     
-    var showWarningToast: StringClosure? { get set }
+    var showWarningAlert: StringClosure? { get set }
 }
 
 protocol BaseViewModelProtocol: BaseViewModelDataSource, BaseViewModelEventSource {}
@@ -31,7 +31,7 @@ class BaseViewModel: BaseViewModelProtocol {
     var showLoading: VoidClosure?
     var hideLoading: VoidClosure?
     
-    var showWarningToast: StringClosure?
+    var showWarningAlert: StringClosure?
     
     let navigator: AppNavigator
     let networkService: NetworkServiceProtocol
