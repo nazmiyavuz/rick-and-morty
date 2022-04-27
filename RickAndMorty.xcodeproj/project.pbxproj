@@ -15,6 +15,8 @@
 		40AD34DC2819764C00F9D006 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34DB2819764C00F9D006 /* HomeViewController.swift */; };
 		40AD34E9281980E100F9D006 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34E8281980E000F9D006 /* Logger.swift */; };
 		40AD34EB2819814400F9D006 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34EA2819814400F9D006 /* ReusableView.swift */; };
+		40AD34ED281981A400F9D006 /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34EC281981A400F9D006 /* MainNavigator.swift */; };
+		40AD34EF281981E200F9D006 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34EE281981E200F9D006 /* AppNavigator.swift */; };
 		7A355CD6F001F924FEDAB3BC /* Pods_RickAndMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EB2A0350F0A878DF445703 /* Pods_RickAndMorty.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		40AD34DB2819764C00F9D006 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		40AD34E8281980E000F9D006 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		40AD34EA2819814400F9D006 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		40AD34EC281981A400F9D006 /* MainNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
+		40AD34EE281981E200F9D006 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 		C1B3777825FF83AB44EA6BBF /* Pods-RickAndMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty.release.xcconfig"; path = "Target Support Files/Pods-RickAndMorty/Pods-RickAndMorty.release.xcconfig"; sourceTree = "<group>"; };
 		C678AF68B660658F5FDCA30E /* Pods-RickAndMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMorty/Pods-RickAndMorty.debug.xcconfig"; sourceTree = "<group>"; };
 		F1EB2A0350F0A878DF445703 /* Pods_RickAndMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +127,7 @@
 		40AD34E328197D4F00F9D006 /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
+				40AD34EE281981E200F9D006 /* AppNavigator.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				40AD34EA2819814400F9D006 /* ReusableView.swift */,
+				40AD34EC281981A400F9D006 /* MainNavigator.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -295,8 +301,10 @@
 			files = (
 				40AD34C528196E9600F9D006 /* AppDelegate.swift in Sources */,
 				40AD34EB2819814400F9D006 /* ReusableView.swift in Sources */,
+				40AD34EF281981E200F9D006 /* AppNavigator.swift in Sources */,
 				40AD34C728196E9600F9D006 /* SceneDelegate.swift in Sources */,
 				40AD34DC2819764C00F9D006 /* HomeViewController.swift in Sources */,
+				40AD34ED281981A400F9D006 /* MainNavigator.swift in Sources */,
 				40AD34E9281980E100F9D006 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
