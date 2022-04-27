@@ -10,6 +10,6 @@ import UIKit
 
 extension UIImage {
     
-    static var emptyCellImage: UIImage? = UIImage(named: "emptyCellImage")
+    static var emptyCellImage: UIImage? = .init(named: "emptyCellImage")
     
 }

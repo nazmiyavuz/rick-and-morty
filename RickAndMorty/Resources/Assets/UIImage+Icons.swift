@@ -9,8 +9,8 @@ import UIKit
 
 extension UIImage {
     
-    static var filterIcon: UIImage? = UIImage(named: "filterIcon")
-    static var radioOffIcon: UIImage? = UIImage(named: "radioOffIcon")
-    static var radioOnIcon: UIImage? = UIImage(named: "radioOnIcon")
+    static var filterIcon: UIImage? = .init(named: "filterIcon")
+    static var radioOffIcon: UIImage? = .init(named: "radioOffIcon")
+    static var radioOnIcon: UIImage? = .init(named: "radioOnIcon")
     
 }

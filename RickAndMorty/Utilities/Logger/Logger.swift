@@ -35,7 +35,7 @@ enum Logger {
     }
     
     static func verbose(_ message: @autoclosure () -> Any, shouldLogContext: Bool = true, file: String = #file,
-                     line: Int = #line, function: String = #function) {
+                        line: Int = #line, function: String = #function) {
         let context = Context(file: file, function: function, line: line)
         Logger.handleLog(level: .verbose, message: message(), shouldLogContext: shouldLogContext, context: context)
     }
