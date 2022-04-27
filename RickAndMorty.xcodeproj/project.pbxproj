@@ -13,6 +13,7 @@
 		40AD34CC28196E9600F9D006 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AD34CA28196E9600F9D006 /* Main.storyboard */; };
 		40AD34CE28196E9800F9D006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40AD34CD28196E9800F9D006 /* Assets.xcassets */; };
 		40AD34D128196E9800F9D006 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AD34CF28196E9800F9D006 /* LaunchScreen.storyboard */; };
+		40AD34DA2819726C00F9D006 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 40AD34D92819726C00F9D006 /* .swiftlint.yml */; };
 		7A355CD6F001F924FEDAB3BC /* Pods_RickAndMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EB2A0350F0A878DF445703 /* Pods_RickAndMorty.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		40AD34CD28196E9800F9D006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40AD34D028196E9800F9D006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40AD34D228196E9800F9D006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40AD34D92819726C00F9D006 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C1B3777825FF83AB44EA6BBF /* Pods-RickAndMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty.release.xcconfig"; path = "Target Support Files/Pods-RickAndMorty/Pods-RickAndMorty.release.xcconfig"; sourceTree = "<group>"; };
 		C678AF68B660658F5FDCA30E /* Pods-RickAndMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMorty/Pods-RickAndMorty.debug.xcconfig"; sourceTree = "<group>"; };
 		F1EB2A0350F0A878DF445703 /* Pods_RickAndMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +47,7 @@
 		40AD34B828196E9600F9D006 = {
 			isa = PBXGroup;
 			children = (
+				40AD34D92819726C00F9D006 /* .swiftlint.yml */,
 				40AD34C328196E9600F9D006 /* RickAndMorty */,
 				40AD34C228196E9600F9D006 /* Products */,
 				44BC031C3C743A8CC81D9784 /* Pods */,
@@ -102,7 +105,7 @@
 				40AD34BD28196E9600F9D006 /* Sources */,
 				40AD34BE28196E9600F9D006 /* Frameworks */,
 				40AD34BF28196E9600F9D006 /* Resources */,
-				40AD34D82819709E00F9D006 /* ShellScript */,
+				40AD34D82819709E00F9D006 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -151,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40AD34DA2819726C00F9D006 /* .swiftlint.yml in Resources */,
 				40AD34D128196E9800F9D006 /* LaunchScreen.storyboard in Resources */,
 				40AD34CE28196E9800F9D006 /* Assets.xcassets in Resources */,
 				40AD34CC28196E9600F9D006 /* Main.storyboard in Resources */,
@@ -160,7 +164,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		40AD34D82819709E00F9D006 /* ShellScript */ = {
+		40AD34D82819709E00F9D006 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -169,6 +173,7 @@
 			);
 			inputPaths = (
 			);
+			name = Swiftlint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
