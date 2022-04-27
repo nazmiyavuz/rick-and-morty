@@ -13,6 +13,13 @@
 		40AD34D128196E9800F9D006 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AD34CF28196E9800F9D006 /* LaunchScreen.storyboard */; };
 		40AD34DA2819726C00F9D006 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 40AD34D92819726C00F9D006 /* .swiftlint.yml */; };
 		40AD34DC2819764C00F9D006 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34DB2819764C00F9D006 /* HomeViewController.swift */; };
+		40AD34E9281980E100F9D006 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34E8281980E000F9D006 /* Logger.swift */; };
+		40AD34EB2819814400F9D006 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34EA2819814400F9D006 /* ReusableView.swift */; };
+		40AD34ED281981A400F9D006 /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34EC281981A400F9D006 /* MainNavigator.swift */; };
+		40AD34EF281981E200F9D006 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34EE281981E200F9D006 /* AppNavigator.swift */; };
+		40AD34F12819838300F9D006 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34F02819838300F9D006 /* UITableView+Extensions.swift */; };
+		40AD34F42819A26300F9D006 /* UIImage+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34F32819A26300F9D006 /* UIImage+Icons.swift */; };
+		40AD34F82819A6DA00F9D006 /* UIImage+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34F72819A6DA00F9D006 /* UIImage+Images.swift */; };
 		7A355CD6F001F924FEDAB3BC /* Pods_RickAndMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EB2A0350F0A878DF445703 /* Pods_RickAndMorty.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +32,13 @@
 		40AD34D228196E9800F9D006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40AD34D92819726C00F9D006 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		40AD34DB2819764C00F9D006 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		40AD34E8281980E000F9D006 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		40AD34EA2819814400F9D006 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		40AD34EC281981A400F9D006 /* MainNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
+		40AD34EE281981E200F9D006 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
+		40AD34F02819838300F9D006 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		40AD34F32819A26300F9D006 /* UIImage+Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Icons.swift"; sourceTree = "<group>"; };
+		40AD34F72819A6DA00F9D006 /* UIImage+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Images.swift"; sourceTree = "<group>"; };
 		C1B3777825FF83AB44EA6BBF /* Pods-RickAndMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty.release.xcconfig"; path = "Target Support Files/Pods-RickAndMorty/Pods-RickAndMorty.release.xcconfig"; sourceTree = "<group>"; };
 		C678AF68B660658F5FDCA30E /* Pods-RickAndMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMorty/Pods-RickAndMorty.debug.xcconfig"; sourceTree = "<group>"; };
 		F1EB2A0350F0A878DF445703 /* Pods_RickAndMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,14 +78,109 @@
 		40AD34C328196E9600F9D006 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				40AD34C428196E9600F9D006 /* AppDelegate.swift */,
-				40AD34C628196E9600F9D006 /* SceneDelegate.swift */,
-				40AD34DB2819764C00F9D006 /* HomeViewController.swift */,
-				40AD34CD28196E9800F9D006 /* Assets.xcassets */,
-				40AD34CF28196E9800F9D006 /* LaunchScreen.storyboard */,
 				40AD34D228196E9800F9D006 /* Info.plist */,
+				40AD34E62819809B00F9D006 /* Utilities */,
+				40AD34E228197C6A00F9D006 /* Extensions */,
+				40AD34DE28197AF900F9D006 /* Main */,
+				40AD34E328197D4F00F9D006 /* Navigator */,
+				40AD34E528197F8B00F9D006 /* Protocol */,
+				40AD34E128197C6500F9D006 /* Models */,
+				40AD34E028197C3300F9D006 /* UIComponents */,
+				40AD34DF28197C2400F9D006 /* Scenes */,
+				40AD34E428197DB400F9D006 /* Resources */,
 			);
 			path = RickAndMorty;
+			sourceTree = "<group>";
+		};
+		40AD34DE28197AF900F9D006 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34C428196E9600F9D006 /* AppDelegate.swift */,
+				40AD34C628196E9600F9D006 /* SceneDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		40AD34DF28197C2400F9D006 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34DB2819764C00F9D006 /* HomeViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		40AD34E028197C3300F9D006 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		40AD34E128197C6500F9D006 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		40AD34E228197C6A00F9D006 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34F02819838300F9D006 /* UITableView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		40AD34E328197D4F00F9D006 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34EE281981E200F9D006 /* AppNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		40AD34E428197DB400F9D006 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34F228198FF600F9D006 /* Assets */,
+				40AD34CF28196E9800F9D006 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		40AD34E528197F8B00F9D006 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34EA2819814400F9D006 /* ReusableView.swift */,
+				40AD34EC281981A400F9D006 /* MainNavigator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		40AD34E62819809B00F9D006 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34E7281980D400F9D006 /* Logger */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		40AD34E7281980D400F9D006 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34E8281980E000F9D006 /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		40AD34F228198FF600F9D006 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34CD28196E9800F9D006 /* Assets.xcassets */,
+				40AD34F32819A26300F9D006 /* UIImage+Icons.swift */,
+				40AD34F72819A6DA00F9D006 /* UIImage+Images.swift */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		44BC031C3C743A8CC81D9784 /* Pods */ = {
@@ -122,6 +231,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
+				ORGANIZATIONNAME = "Nazmi Yavuz";
 				TargetAttributes = {
 					40AD34C028196E9600F9D006 = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -208,8 +318,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				40AD34C528196E9600F9D006 /* AppDelegate.swift in Sources */,
+				40AD34F82819A6DA00F9D006 /* UIImage+Images.swift in Sources */,
+				40AD34EB2819814400F9D006 /* ReusableView.swift in Sources */,
+				40AD34EF281981E200F9D006 /* AppNavigator.swift in Sources */,
+				40AD34F12819838300F9D006 /* UITableView+Extensions.swift in Sources */,
 				40AD34C728196E9600F9D006 /* SceneDelegate.swift in Sources */,
+				40AD34F42819A26300F9D006 /* UIImage+Icons.swift in Sources */,
 				40AD34DC2819764C00F9D006 /* HomeViewController.swift in Sources */,
+				40AD34ED281981A400F9D006 /* MainNavigator.swift in Sources */,
+				40AD34E9281980E100F9D006 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,11 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        guard let scene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: scene)
-        let navigationController = UINavigationController(rootViewController: HomeViewController())
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
+        guard (scene as? UIWindowScene) != nil else { return }
+        let appNavigator: AppNavigator = .shared
+        appNavigator.start(with: .home, scene: scene)
         
     }
 
