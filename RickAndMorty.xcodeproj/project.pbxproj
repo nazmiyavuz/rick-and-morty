@@ -64,14 +64,86 @@
 		40AD34C328196E9600F9D006 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				40AD34C428196E9600F9D006 /* AppDelegate.swift */,
-				40AD34C628196E9600F9D006 /* SceneDelegate.swift */,
-				40AD34DB2819764C00F9D006 /* HomeViewController.swift */,
-				40AD34CD28196E9800F9D006 /* Assets.xcassets */,
-				40AD34CF28196E9800F9D006 /* LaunchScreen.storyboard */,
 				40AD34D228196E9800F9D006 /* Info.plist */,
+				40AD34E62819809B00F9D006 /* Utilities */,
+				40AD34E228197C6A00F9D006 /* Extensions */,
+				40AD34DE28197AF900F9D006 /* Main */,
+				40AD34E328197D4F00F9D006 /* Navigator */,
+				40AD34E528197F8B00F9D006 /* Protocol */,
+				40AD34E128197C6500F9D006 /* Models */,
+				40AD34E028197C3300F9D006 /* UIComponents */,
+				40AD34DF28197C2400F9D006 /* Scenes */,
+				40AD34E428197DB400F9D006 /* Resources */,
 			);
 			path = RickAndMorty;
+			sourceTree = "<group>";
+		};
+		40AD34DE28197AF900F9D006 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34C428196E9600F9D006 /* AppDelegate.swift */,
+				40AD34C628196E9600F9D006 /* SceneDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		40AD34DF28197C2400F9D006 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34DB2819764C00F9D006 /* HomeViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		40AD34E028197C3300F9D006 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		40AD34E128197C6500F9D006 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		40AD34E228197C6A00F9D006 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		40AD34E328197D4F00F9D006 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		40AD34E428197DB400F9D006 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				40AD34CD28196E9800F9D006 /* Assets.xcassets */,
+				40AD34CF28196E9800F9D006 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		40AD34E528197F8B00F9D006 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		40AD34E62819809B00F9D006 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		44BC031C3C743A8CC81D9784 /* Pods */ = {
