@@ -30,7 +30,7 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
         view.backgroundColor = .systemBackground
         subscribeLoading()
         subscribeActivityIndicator()
-        subscribeToast()
+        subscribeAlert()
     }
     
     private func subscribeActivityIndicator() {
@@ -51,16 +51,14 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
         }
     }
     
-    private func subscribeToast() {
+    private func subscribeAlert() {
         viewModel.showWarningAlert = { text in
-            // TODO: Add Alert
-            
+            Alert.main.showAlert("Ooops!", message: text)
         }
     }
     
-    func showWarningToast(message: String) {
-        // TODO: Add Alert
-        
+    func showWarningAlert(message: String) {
+        Alert.main.showAlert("Ooops!", message: message)
     }
     
     #if DEBUG
