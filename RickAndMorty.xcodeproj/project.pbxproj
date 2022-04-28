@@ -160,11 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				40AD34D228196E9800F9D006 /* Info.plist */,
-				40AD34E62819809B00F9D006 /* Utilities */,
-				40AD34E228197C6A00F9D006 /* Extensions */,
 				40AD34DE28197AF900F9D006 /* Main */,
-				40AD34E328197D4F00F9D006 /* Navigator */,
-				40AD34E528197F8B00F9D006 /* Protocol */,
+				40AD34E62819809B00F9D006 /* Utilities */,
 				40AD34E128197C6500F9D006 /* Models */,
 				40AD34FF2819DC7100F9D006 /* Services */,
 				40AD34E028197C3300F9D006 /* UIComponents */,
@@ -257,6 +254,9 @@
 				40AD35182819EAF400F9D006 /* Alert */,
 				40AD34F92819DA5A00F9D006 /* Constants */,
 				40AD34E7281980D400F9D006 /* Logger */,
+				40AD34E228197C6A00F9D006 /* Extensions */,
+				40AD34E328197D4F00F9D006 /* Navigator */,
+				40AD34E528197F8B00F9D006 /* Protocol */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
