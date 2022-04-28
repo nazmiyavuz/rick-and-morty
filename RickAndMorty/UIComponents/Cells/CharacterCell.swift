@@ -45,9 +45,11 @@ class CharacterCell: UITableViewCell, ReusableView {
     }(UILabel())
     
     // MARK: - ViewModel
+    
     weak var viewModel: CharacterCellProtocol?
     
     // MARK: - LifeCycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubViews()
@@ -125,6 +127,11 @@ extension CharacterCell {
     
     func set(with viewModel: CharacterCellProtocol) {
         self.viewModel = viewModel
-        
+        // TODO: Change image url
+        let imageURL = "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        characterImageView.setImage(imageURL, placeholder: .mockCellImage)
+        idLabel.createAttribute(first: "#id: ", second: "\(viewModel.characterId)")
+        nameLabel.createAttribute(first: "Name: ", second: viewModel.characterName)
+        locationLabel.createAttribute(first: "Location: ", second: viewModel.characterLocation)
     }
 }
