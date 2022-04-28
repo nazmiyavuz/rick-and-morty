@@ -29,6 +29,7 @@ class CharacterCell: UITableViewCell, ReusableView {
     
     private let idLabel: UILabel = {
         $0.createAttribute(first: "#ID: ", second: "1")
+        $0.textAlignment = .right
         return $0
     }(UILabel())
     
@@ -71,7 +72,7 @@ extension CharacterCell {
     private func addSubViews() {
         backgroundColor = .systemBackground
         addCardView()
-        
+        addCharacterImageView()
     }
     
     private func addCardView() {
@@ -80,7 +81,14 @@ extension CharacterCell {
             make.leading.trailing.equalToSuperview().inset(24)
             make.top.bottom.equalToSuperview().inset(8)
         }
-        
+    }
+    
+    private func addCharacterImageView() {
+        cardView.addSubview(characterImageView)
+        characterImageView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(168)
+        }
     }
 }
 
