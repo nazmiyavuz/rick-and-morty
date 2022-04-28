@@ -16,6 +16,6 @@ extension UIColor {
     
     static let appLabel: UIColor = .init(named: "appLabel") ?? "#000000".hexStringConvertToUIColor()
     
-    static let appSecondaryLabel: UIColor? = .init(named: "appSecondaryLabel") ?? .gray
+    static let appSecondaryLabel: UIColor = .init(named: "appSecondaryLabel") ?? "#C4C4C4".hexStringConvertToUIColor()
     
 }

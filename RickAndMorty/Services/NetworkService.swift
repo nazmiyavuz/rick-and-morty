@@ -39,7 +39,7 @@ extension NetworkService {
     private func createMockCartoonCharacter() -> [CartoonCharacter] {
         return (1...20).map { charID -> CartoonCharacter in
             let name = charID % 2 == 0 ? "Morty" : "Rick"
-            let location =  charID % 2 == 0 ? "Izmir" : "Istanbul"
+            let location = charID % 2 == 0 ? "Izmir" : "Istanbul"
             let imageUrl = "https://rickandmortyapi.com/api/character/avatar/\(charID).jpeg"
             return CartoonCharacter(id: charID, imageURL: imageUrl, name: name, location: location)
         }

@@ -14,7 +14,7 @@ class CharacterCell: UITableViewCell, ReusableView {
     // MARK: - UIViews
     
     private let cardView: UIView = {
-        $0.backgroundColor = .systemBackground
+        $0.backgroundColor = .appSecondaryBackground
         $0.cornerRadius = 20
         return $0
     }(UIView())
@@ -73,7 +73,7 @@ class CharacterCell: UITableViewCell, ReusableView {
 extension CharacterCell {
     
     private func addSubViews() {
-        backgroundColor = .systemBackground
+        backgroundColor = .appPrimaryBackground
         addCardView()
         addCharacterImageView()
         addIdLabel()

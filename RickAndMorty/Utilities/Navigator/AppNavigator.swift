@@ -53,7 +53,7 @@ final class AppNavigator: MainNavigator {
             
         case .filter:
             
-            let viewController = HomeViewController()
+            let viewController = HomeViewController(viewModel: HomeViewModel(navigator: self))
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
