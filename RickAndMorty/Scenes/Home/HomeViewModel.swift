@@ -17,7 +17,7 @@ protocol HomeViewDataSource {
 }
 
 protocol HomeViewEventSource {
-    var didSuccessFetchCharacters: VoidClosure? { get set }
+    var didSuccessFetchCharacters: AppendCellClosure? { get set }
 }
 
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
@@ -40,7 +40,7 @@ final class HomeViewModel: BaseViewModel, HomeViewProtocol {
     var page = 1
     var cellItems: [CharacterCellProtocol] = []
   
-    var didSuccessFetchCharacters: VoidClosure?
+    var didSuccessFetchCharacters: AppendCellClosure?
     
     var numberOfItems: Int {
         return cellItems.count
@@ -62,12 +62,18 @@ extension HomeViewModel {
             self.hideActivityIndicatorView?()
             switch result {
             case .success(let characters):
+                let firstIndex = self.cellItems.count
+                
                 let cellItems = characters.map({ CharacterCellModel(character: $0) })
+                let lastIndex = cellItems.count + firstIndex - 1
+                
+                let indexPathList = self.createIndexPathList(firstIndex: firstIndex, lastIndex: lastIndex)
+                
                 self.cellItems.append(contentsOf: cellItems)
                 self.page += 1
                 // FIXME: change after fetching data from remote server
                 self.isPagingEnabled = 1 < 10
-                self.didSuccessFetchCharacters?()
+                self.didSuccessFetchCharacters?(self.page != 1, indexPathList)
                 
             case .failure(let error):
                 if self.page == 1 {
@@ -80,5 +86,9 @@ extension HomeViewModel {
   
     func fetchMoreCharacters() {
         fetchCharacters()
+    }
+    // There are only one section which is 0
+    private func createIndexPathList(firstIndex: Int, lastIndex: Int) -> [IndexPath] {
+        Array(firstIndex...lastIndex).map { IndexPath(row: $0, section: 0) }
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 public typealias VoidClosure = (() -> Void)
 public typealias StringClosure = ((String) -> Void)
+public typealias AppendCellClosure = ((Bool, [IndexPath]) -> Void)
 
 // TODO: Delete if you don't need
 // public typealias IntClosure = ((Int) -> Void)

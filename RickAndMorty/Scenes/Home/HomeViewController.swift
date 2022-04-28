@@ -30,9 +30,14 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     private func subscribeViewModelEvents() {
-        viewModel.didSuccessFetchCharacters = { [weak self] in
+        
+        viewModel.didSuccessFetchCharacters = { [weak self] (didAppend, indexPathList) in
+            
             guard let self = self else { return }
-            self.tableView.reloadData()
+            switch didAppend {
+            case false: self.tableView.reloadData()
+            case true:  self.tableView.insertRows(at: indexPathList, with: .automatic)
+            }
         }
     }
     
@@ -85,11 +90,13 @@ extension HomeViewController {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         let height = scrollView.frame.size.height
-        
+
         if offsetY > contentHeight - height && viewModel.isPagingEnabled {
             viewModel.fetchMoreCharacters()
         }
+
     }
+    
 }
 
 // MARK: - UITableViewDataSource
