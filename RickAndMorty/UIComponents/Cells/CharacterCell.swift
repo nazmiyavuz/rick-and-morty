@@ -73,6 +73,7 @@ extension CharacterCell {
         backgroundColor = .systemBackground
         addCardView()
         addCharacterImageView()
+        addIdLabel()
     }
     
     private func addCardView() {
@@ -88,6 +89,14 @@ extension CharacterCell {
         characterImageView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(168)
+        }
+    }
+    
+    private func addIdLabel() {
+        cardView.addSubview(idLabel)
+        idLabel.snp.makeConstraints { make in
+            make.top.equalTo(characterImageView).offset(8)
+            make.trailing.equalToSuperview().inset(14)
         }
     }
 }
