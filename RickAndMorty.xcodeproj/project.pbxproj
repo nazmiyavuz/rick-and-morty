@@ -17,6 +17,10 @@
 		406B1405281A787200945452 /* CartoonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B1404281A787200945452 /* CartoonCharacter.swift */; };
 		406B1407281A7AE700945452 /* CharacterCellModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B1406281A7AE700945452 /* CharacterCellModel+Extensions.swift */; };
 		406B140C281A8A1800945452 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B140B281A8A1800945452 /* Font.swift */; };
+		406B140E281A8F6300945452 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406B140D281A8F6300945452 /* Colors.xcassets */; };
+		406B1410281A905300945452 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406B140F281A905300945452 /* Icons.xcassets */; };
+		406B1412281A908600945452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406B1411281A908600945452 /* Images.xcassets */; };
+		406B1414281A90C100945452 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B1413281A90C100945452 /* UIColor+Colors.swift */; };
 		40AD34C528196E9600F9D006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34C428196E9600F9D006 /* AppDelegate.swift */; };
 		40AD34C728196E9600F9D006 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34C628196E9600F9D006 /* SceneDelegate.swift */; };
 		40AD34CE28196E9800F9D006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40AD34CD28196E9800F9D006 /* Assets.xcassets */; };
@@ -56,6 +60,10 @@
 		406B1409281A898900945452 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		406B140A281A899200945452 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		406B140B281A8A1800945452 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		406B140D281A8F6300945452 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		406B140F281A905300945452 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		406B1411281A908600945452 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		406B1413281A90C100945452 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		40AD34C128196E9600F9D006 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40AD34C428196E9600F9D006 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40AD34C628196E9600F9D006 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,8 +270,12 @@
 			isa = PBXGroup;
 			children = (
 				40AD34CD28196E9800F9D006 /* Assets.xcassets */,
+				406B140D281A8F6300945452 /* Colors.xcassets */,
+				406B140F281A905300945452 /* Icons.xcassets */,
+				406B1411281A908600945452 /* Images.xcassets */,
 				40AD34F32819A26300F9D006 /* UIImage+Icons.swift */,
 				40AD34F72819A6DA00F9D006 /* UIImage+Images.swift */,
+				406B1413281A90C100945452 /* UIColor+Colors.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -399,8 +411,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				40AD34DA2819726C00F9D006 /* .swiftlint.yml in Resources */,
+				406B140E281A8F6300945452 /* Colors.xcassets in Resources */,
 				40AD34D128196E9800F9D006 /* LaunchScreen.storyboard in Resources */,
+				406B1412281A908600945452 /* Images.xcassets in Resources */,
 				40AD34CE28196E9800F9D006 /* Assets.xcassets in Resources */,
+				406B1410281A905300945452 /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +492,7 @@
 				406B13FF281A6A2500945452 /* UIView+Extensions.swift in Sources */,
 				40AD34C528196E9600F9D006 /* AppDelegate.swift in Sources */,
 				406B13F9281A5FDC00945452 /* CharacterCell.swift in Sources */,
+				406B1414281A90C100945452 /* UIColor+Colors.swift in Sources */,
 				40AD35122819E3E600F9D006 /* UIApplication+Extensions.swift in Sources */,
 				40AD34F82819A6DA00F9D006 /* UIImage+Images.swift in Sources */,
 				40AD34EB2819814400F9D006 /* ReusableView.swift in Sources */,
