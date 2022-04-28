@@ -40,6 +40,7 @@ class CharacterCell: UITableViewCell, ReusableView {
     
     private let locationLabel: UILabel = {
         $0.createAttribute(first: "Location: ", second: "Earth")
+        $0.numberOfLines = 0
         return $0
     }(UILabel())
     
@@ -75,6 +76,7 @@ extension CharacterCell {
         addCharacterImageView()
         addIdLabel()
         addNameLabel()
+        addLocationLabel()
     }
     
     private func addCardView() {
@@ -106,6 +108,14 @@ extension CharacterCell {
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(idLabel).offset(8)
             make.leading.trailing.equalToSuperview().inset(14)
+        }
+    }
+    
+    private func addLocationLabel() {
+        cardView.addSubview(locationLabel)
+        locationLabel.snp.makeConstraints { make in
+            make.top.equalTo(nameLabel).offset(8)
+            make.leading.trailing.equalTo(nameLabel)
         }
     }
 }
