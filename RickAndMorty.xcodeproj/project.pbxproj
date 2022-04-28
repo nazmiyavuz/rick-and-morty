@@ -23,6 +23,9 @@
 		406B1414281A90C100945452 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B1413281A90C100945452 /* UIColor+Colors.swift */; };
 		406B1416281A92B300945452 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B1415281A92B300945452 /* String+Extensions.swift */; };
 		406B1418281A9FB300945452 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B1417281A9FB300945452 /* MainNavigationController.swift */; };
+		409928EF281AD0B50068E773 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 409928EE281AD0B50068E773 /* schema.json */; };
+		409928F1281AD0DF0068E773 /* GetCharacters.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 409928F0281AD0DF0068E773 /* GetCharacters.graphql */; };
+		409928F4281AD2D00068E773 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409928F3281AD2D00068E773 /* API.swift */; };
 		40AD34C528196E9600F9D006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34C428196E9600F9D006 /* AppDelegate.swift */; };
 		40AD34C728196E9600F9D006 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34C628196E9600F9D006 /* SceneDelegate.swift */; };
 		40AD34CE28196E9800F9D006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40AD34CD28196E9800F9D006 /* Assets.xcassets */; };
@@ -68,6 +71,9 @@
 		406B1413281A90C100945452 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
 		406B1415281A92B300945452 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		406B1417281A9FB300945452 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		409928EE281AD0B50068E773 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		409928F0281AD0DF0068E773 /* GetCharacters.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetCharacters.graphql; sourceTree = "<group>"; };
+		409928F3281AD2D00068E773 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		40AD34C128196E9600F9D006 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40AD34C428196E9600F9D006 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40AD34C628196E9600F9D006 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +145,16 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		409928ED281AD08C0068E773 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				409928F3281AD2D00068E773 /* API.swift */,
+				409928EE281AD0B50068E773 /* schema.json */,
+				409928F0281AD0DF0068E773 /* GetCharacters.graphql */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
 		40AD34B828196E9600F9D006 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				40AD34D228196E9800F9D006 /* Info.plist */,
+				409928ED281AD08C0068E773 /* GraphQL */,
 				40AD34DE28197AF900F9D006 /* Main */,
 				40AD34E62819809B00F9D006 /* Utilities */,
 				40AD34E128197C6500F9D006 /* Models */,
@@ -361,6 +378,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40AD34D528196E9800F9D006 /* Build configuration list for PBXNativeTarget "RickAndMorty" */;
 			buildPhases = (
+				409928F2281AD10F0068E773 /* Generate Apollo GraphQL API */,
 				44EA98FC6B0AA6D7D8901595 /* [CP] Check Pods Manifest.lock */,
 				40AD34BD28196E9600F9D006 /* Sources */,
 				40AD34BE28196E9600F9D006 /* Frameworks */,
@@ -416,7 +434,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409928EF281AD0B50068E773 /* schema.json in Resources */,
 				40AD34DA2819726C00F9D006 /* .swiftlint.yml in Resources */,
+				409928F1281AD0DF0068E773 /* GetCharacters.graphql in Resources */,
 				406B140E281A8F6300945452 /* Colors.xcassets in Resources */,
 				40AD34D128196E9800F9D006 /* LaunchScreen.storyboard in Resources */,
 				406B1412281A908600945452 /* Images.xcassets in Resources */,
@@ -428,6 +448,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		409928F2281AD10F0068E773 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/RickAndMorty/GraphQL\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
 		40AD34D82819709E00F9D006 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -524,6 +562,7 @@
 				40AD35072819DE6400F9D006 /* ActivityIndicatorView.swift in Sources */,
 				40AD351A2819EAFE00F9D006 /* Alert.swift in Sources */,
 				40AD350C2819DF7A00F9D006 /* ActivityIndicatorProtocol.swift in Sources */,
+				409928F4281AD2D00068E773 /* API.swift in Sources */,
 				406B13FB281A60C800945452 /* ReusableView+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,6 +706,7 @@
 				DEVELOPMENT_TEAM = J3G3L895L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMorty/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick Morty";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -695,6 +735,7 @@
 				DEVELOPMENT_TEAM = J3G3L895L8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMorty/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick Morty";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

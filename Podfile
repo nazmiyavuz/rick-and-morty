@@ -6,6 +6,9 @@ target 'RickAndMorty' do
   use_frameworks!
 
   # Pods for RickAndMorty
+  
+  # Network
+  pod "Apollo"
 
   # Helper
   pod 'SwiftLint'

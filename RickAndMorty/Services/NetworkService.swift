@@ -7,27 +7,49 @@
 //
 
 import Foundation
+import Apollo
 
-// FIXME: Delete after fetching data from remote server
 enum NetworkError: Error {
     case unKnown
+    case known(String)
 }
-// FIXME: Delete after fetching data from remote server
-typealias CharacterResult = ((Result<[CartoonCharacter], NetworkError>) -> Void)
+
+typealias CharacterResult = ((Result<GetCharactersQuery.Data.Character, NetworkError>) -> Void)
 
 protocol NetworkServiceProtocol {
-    func fetchCharacters(isSuccess: Bool, completion: @escaping CharacterResult)
+    func fetchCharacters(page: Int, filter: FilterOption?, completion: @escaping CharacterResult)
+}
+
+enum FilterOption: String {
+    case rick
+    case morty
 }
 
 class NetworkService: NetworkServiceProtocol {
     
-    func fetchCharacters(isSuccess: Bool, completion: @escaping CharacterResult) {
-        if isSuccess {
-            let characterList = createMockCartoonCharacter()
-            completion(.success(characterList))
-        } else {
-            completion(.failure(NetworkError.unKnown))
+    private lazy var apollo = ApolloClient(url: URL(string: "https://rickandmortyapi.com/graphql")!)
+    
+    func fetchCharacters(page: Int, filter: FilterOption?, completion: @escaping CharacterResult) {
+        
+        apollo.fetch(query: GetCharactersQuery(name: filter?.rawValue, page: page)) { result in
+            switch result {
+                
+            case .success(let graphQLResult):
+                guard let data = graphQLResult.data?.characters else {
+                    completion(.failure(NetworkError.unKnown)); return
+                }
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(NetworkError.known(error.localizedDescription)))
+            }
         }
+        
+//        if isSuccess {
+//            let characterList = createMockCartoonCharacter()
+//            completion(.success(characterList))
+//        } else {
+//            completion(.failure(NetworkError.unKnown))
+//        }
         
     }
     
