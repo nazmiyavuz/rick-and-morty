@@ -14,7 +14,7 @@ extension UILabel {
                          firstFont: UIFont = Font.robotoRegular(size: 16).value,
                          firstColor: UIColor = .appLabel,
                          second: String,
-                         secondFont: UIFont = Font.robotoBold(size: 16).value,
+                         secondFont: UIFont = Font.robotoRegular(size: 16).value,
                          secondColor: UIColor = .appSecondaryLabel) {
         
         let firstAttributedText = NSMutableAttributedString(

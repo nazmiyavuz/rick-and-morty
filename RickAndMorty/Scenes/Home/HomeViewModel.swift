@@ -31,7 +31,8 @@ protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
 final class HomeViewModel: BaseViewModel, HomeViewProtocol {
     
     func navigateToFilterScreen() {
-        navigator.navigate(to: .filter)
+        Logger.debug("FilterButtonTapped")
+//        navigator.navigate(to: .filter)
     }
     
     var isPagingEnabled = false
@@ -40,8 +41,6 @@ final class HomeViewModel: BaseViewModel, HomeViewProtocol {
     var cellItems: [CharacterCellProtocol] = []
   
     var didSuccessFetchCharacters: VoidClosure?
-    
-    var title: String?
     
     var numberOfItems: Int {
         return cellItems.count

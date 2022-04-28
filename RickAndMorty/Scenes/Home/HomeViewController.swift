@@ -11,8 +11,12 @@ import SnapKit
 class HomeViewController: BaseViewController<HomeViewModel> {
     
     // MARK: - Views
-    
-    private let tableView = UITableView()
+    private let tableView: UITableView = {
+        $0.separatorStyle = .none
+        $0.backgroundColor = .appPrimaryBackground
+        $0.register(CharacterCell.self)
+        return $0
+    }(UITableView())
     
     // MARK: - LifeCycle
     
@@ -49,10 +53,9 @@ extension HomeViewController {
 extension HomeViewController {
     
     private func configureContents() {
-        navigationItem.title = viewModel.title
+        navigationItem.title = "Rick and Morty"
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(CharacterCell.self)
         configureFilterRightBarButton()
     }
     
@@ -106,8 +109,8 @@ extension HomeViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Logger.debug("Selected")
     }
 }

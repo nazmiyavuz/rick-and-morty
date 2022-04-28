@@ -53,6 +53,7 @@ class CharacterCell: UITableViewCell, ReusableView {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubViews()
+        self.selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {
@@ -100,7 +101,7 @@ extension CharacterCell {
     private func addIdLabel() {
         cardView.addSubview(idLabel)
         idLabel.snp.makeConstraints { make in
-            make.top.equalTo(characterImageView).offset(8)
+            make.top.equalTo(characterImageView.snp.bottom).offset(8)
             make.trailing.equalToSuperview().inset(14)
         }
     }
@@ -108,7 +109,7 @@ extension CharacterCell {
     private func addNameLabel() {
         cardView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { make in
-            make.top.equalTo(idLabel).offset(8)
+            make.top.equalTo(idLabel.snp.bottom).offset(8)
             make.leading.trailing.equalToSuperview().inset(14)
         }
     }
@@ -116,7 +117,8 @@ extension CharacterCell {
     private func addLocationLabel() {
         cardView.addSubview(locationLabel)
         locationLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel).offset(8)
+            make.top.equalTo(nameLabel.snp.bottom).offset(8)
+            make.bottom.equalToSuperview().inset(16)
             make.leading.trailing.equalTo(nameLabel)
         }
     }
@@ -127,9 +129,7 @@ extension CharacterCell {
     
     func set(with viewModel: CharacterCellProtocol) {
         self.viewModel = viewModel
-        // TODO: Change image url
-        let imageURL = "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-        characterImageView.setImage(imageURL, placeholder: .mockCellImage)
+        characterImageView.setImage(viewModel.characterImageUrl, placeholder: .mockCellImage)
         idLabel.createAttribute(first: "#id: ", second: "\(viewModel.characterId)")
         nameLabel.createAttribute(first: "Name: ", second: viewModel.characterName)
         locationLabel.createAttribute(first: "Location: ", second: viewModel.characterLocation)
