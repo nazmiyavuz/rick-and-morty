@@ -14,6 +14,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private let tableView: UITableView = {
         $0.separatorStyle = .none
         $0.backgroundColor = .appPrimaryBackground
+        $0.showsVerticalScrollIndicator = false
         $0.register(CharacterCell.self)
         return $0
     }(UITableView())
