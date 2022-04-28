@@ -20,7 +20,7 @@ class CharacterCell: UITableViewCell, ReusableView {
     }(UIView())
     
     private let characterImageView: UIImageView = {
-        $0.image = .mockCellImage
+//        $0.image = .mockCellImage
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
         $0.isUserInteractionEnabled = true

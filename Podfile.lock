@@ -1,24 +1,30 @@
 PODS:
+  - Apollo (0.51.2):
+    - Apollo/Core (= 0.51.2)
+  - Apollo/Core (0.51.2)
   - Kingfisher (7.2.1)
   - SnapKit (5.6.0)
   - SwiftLint (0.45.1)
 
 DEPENDENCIES:
+  - Apollo
   - Kingfisher (~> 7.0)
   - SnapKit (~> 5.6.0)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - Apollo
     - Kingfisher
     - SnapKit
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Apollo: e5bc805c3f3556c18edc4eae4e2ea4723cea2318
   Kingfisher: 7c084bebf7d548c623ad41bcf765fb200efed369
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
 
-PODFILE CHECKSUM: 92f093b0f9a927731e89928a3a6e8f99575c14a4
+PODFILE CHECKSUM: 87255584e7fa67cb11be978a4797838adbf6b2ed
 
 COCOAPODS: 1.11.2

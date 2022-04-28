@@ -31,12 +31,18 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     private func subscribeViewModelEvents() {
         
-        viewModel.didSuccessFetchCharacters = { [weak self] (didAppend, indexPathList) in
-            
+        viewModel.didSuccessFetchCharacters = { [weak self] (isFirstLoading, indexPathList) in
             guard let self = self else { return }
-            switch didAppend {
-            case false: self.tableView.reloadData()
-            case true:  self.tableView.insertRows(at: indexPathList, with: .automatic)
+            switch isFirstLoading {
+            case true:
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.viewModel.isFirstLoading = false
+                }
+                
+            case false:
+                self.tableView.insertRows(at: indexPathList, with: .automatic)
+                
             }
         }
     }
@@ -86,15 +92,12 @@ extension HomeViewController {
 // MARK: - UIScrollViewDelegate
 extension HomeViewController {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let height = scrollView.frame.size.height
-
-        if offsetY > contentHeight - height && viewModel.isPagingEnabled {
-            viewModel.fetchMoreCharacters()
-        }
-
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let reloadingIndex = viewModel.cellItems.count - 5
+        guard reloadingIndex == indexPath.row && viewModel.isPagingEnabled else { return }
+        
+        viewModel.fetchMoreCharacters()
     }
     
 }

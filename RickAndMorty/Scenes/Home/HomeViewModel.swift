@@ -37,7 +37,16 @@ final class HomeViewModel: BaseViewModel, HomeViewProtocol {
     
     var isPagingEnabled = false
     
+    var isFirstLoading = true
     var page = 1
+    
+    var filter: FilterOption? {
+        willSet {
+            page = 1
+            isFirstLoading = true
+        }
+    }
+    var numberOfPages: Int?
     var cellItems: [CharacterCellProtocol] = []
   
     var didSuccessFetchCharacters: AppendCellClosure?
@@ -57,27 +66,43 @@ extension HomeViewModel {
     
     func fetchCharacters() {
         
-        networkService.fetchCharacters(isSuccess: true) { [weak self] (result: Result<[CartoonCharacter], NetworkError>) in
+        networkService.fetchCharacters(page: page, filter: filter) { [weak self] (result: Result<GetCharactersQuery.Data.Character, NetworkError>) in
+            
             guard let self = self else { return }
             self.hideActivityIndicatorView?()
             switch result {
-            case .success(let characters):
+            case .success(let charactersData):
+                
                 let firstIndex = self.cellItems.count
+                self.numberOfPages = charactersData.info?.pages
+                
+                guard let characters = charactersData.results else {
+                    self.showWarningAlert?("Something wrong. Please try again later.")
+                    return
+                }
                 
                 let cellItems = characters.map({ CharacterCellModel(character: $0) })
                 let lastIndex = cellItems.count + firstIndex - 1
                 
                 let indexPathList = self.createIndexPathList(firstIndex: firstIndex, lastIndex: lastIndex)
                 
-                self.cellItems.append(contentsOf: cellItems)
+                if self.isFirstLoading {
+                    self.cellItems.removeAll(keepingCapacity: false)
+                    self.cellItems = cellItems
+                } else {
+                    self.cellItems.append(contentsOf: cellItems)
+                }
+                
                 self.page += 1
-                // FIXME: change after fetching data from remote server
-                self.isPagingEnabled = 1 < 10
-                self.didSuccessFetchCharacters?(self.page != 1, indexPathList)
+                
+                self.isPagingEnabled = self.page < self.numberOfPages ?? 1
+                
+                self.didSuccessFetchCharacters?(self.isFirstLoading, indexPathList)
                 
             case .failure(let error):
+                Logger.error("getting \(error.localizedDescription)")
                 if self.page == 1 {
-                    self.showWarningAlert?("\(error.localizedDescription) Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.")
+                    self.showWarningAlert?("\(error.localizedDescription) Something wrong. Please try again later.")
                     
                 }
             }

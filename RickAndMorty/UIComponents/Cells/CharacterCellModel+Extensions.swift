@@ -10,12 +10,12 @@ import Foundation
 
 extension CharacterCellModel {
     
-    convenience init(character: CartoonCharacter) {
+    convenience init(character: GetCharactersQuery.Data.Character.Result?) {
         
         self.init(
-            characterId: character.id,
-            characterImageUrl: character.imageURL,
-            characterName: character.name,
-            characterLocation: character.location)
+            characterId: character?.id ?? "",
+            characterImageUrl: character?.image ?? "",
+            characterName: character?.name ?? "",
+            characterLocation: character?.location?.name ?? "")
     }
 }

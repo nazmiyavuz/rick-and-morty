@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CharacterCellDataSource: AnyObject {
-    var characterId: Int { get }
+    var characterId: String { get }
     var characterImageUrl: String { get }
     var characterName: String { get }
     var characterLocation: String { get }
@@ -21,12 +21,12 @@ protocol CharacterCellProtocol: CharacterCellDataSource, CharacterCellEventSourc
 
 class CharacterCellModel: CharacterCellProtocol {
     
-    var characterId: Int
+    var characterId: String
     var characterImageUrl: String
     var characterName: String
     var characterLocation: String
     
-    init(characterId: Int,
+    init(characterId: String,
          characterImageUrl: String,
          characterName: String,
          characterLocation: String) {
