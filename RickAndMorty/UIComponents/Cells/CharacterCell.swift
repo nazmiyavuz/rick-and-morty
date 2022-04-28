@@ -15,12 +15,10 @@ class CharacterCell: UITableViewCell, ReusableView {
     
     private let cardView: UIView = {
         $0.backgroundColor = .appSecondaryBackground
-        $0.cornerRadius = 20
         return $0
     }(UIView())
     
     private let characterImageView: UIImageView = {
-//        $0.image = .mockCellImage
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
         $0.isUserInteractionEnabled = true
@@ -88,6 +86,14 @@ extension CharacterCell {
             make.leading.trailing.equalToSuperview().inset(24)
             make.top.bottom.equalToSuperview().inset(8)
         }
+        
+        cardView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        cardView.layer.shadowColor = UIColor.black.cgColor
+        cardView.layer.shadowRadius = 3
+        cardView.layer.shadowOpacity = 0.1
+        cardView.layer.cornerRadius = 10
+        cardView.layer.masksToBounds = false
+        
     }
     
     private func addCharacterImageView() {
@@ -96,6 +102,9 @@ extension CharacterCell {
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(168)
         }
+        
+        characterImageView.cornerRadius = 10
+        characterImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     private func addIdLabel() {
