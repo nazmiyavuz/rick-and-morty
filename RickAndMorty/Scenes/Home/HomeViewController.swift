@@ -7,11 +7,10 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController<BaseViewModel> {
     
     // MARK: - Views
-    
-    // MARK: - Properties
+    private let tableView: UITableView = UITableView()
     
     // MARK: - LifeCycle
     

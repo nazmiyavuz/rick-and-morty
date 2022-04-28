@@ -24,7 +24,6 @@ extension UILabel {
                 .foregroundColor: firstColor
             ])
         
-        
         let secondAttributedText = NSAttributedString(
             string: second,
             attributes: [
