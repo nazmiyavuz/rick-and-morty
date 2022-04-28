@@ -74,6 +74,7 @@ extension CharacterCell {
         addCardView()
         addCharacterImageView()
         addIdLabel()
+        addNameLabel()
     }
     
     private func addCardView() {
@@ -97,6 +98,14 @@ extension CharacterCell {
         idLabel.snp.makeConstraints { make in
             make.top.equalTo(characterImageView).offset(8)
             make.trailing.equalToSuperview().inset(14)
+        }
+    }
+    
+    private func addNameLabel() {
+        cardView.addSubview(nameLabel)
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalTo(idLabel).offset(8)
+            make.leading.trailing.equalToSuperview().inset(14)
         }
     }
 }
