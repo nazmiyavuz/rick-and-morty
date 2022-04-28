@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class CharacterCell: UITableViewCell, ReusableView {
     
@@ -69,6 +70,16 @@ extension CharacterCell {
     
     private func addSubViews() {
         backgroundColor = .systemBackground
+        addCardView()
+        
+    }
+    
+    private func addCardView() {
+        contentView.addSubview(cardView)
+        cardView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(24)
+            make.top.bottom.equalToSuperview().inset(8)
+        }
         
     }
 }
