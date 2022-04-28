@@ -11,10 +11,10 @@ import UIKit
 extension UILabel {
     
     func createAttribute(first: String,
-                         firstFont: UIFont = .systemFont(ofSize: 16, weight: .medium),
+                         firstFont: UIFont = Font.robotoRegular(size: 16).value,
                          firstColor: UIColor = .label,
                          second: String,
-                         secondFont: UIFont = .systemFont(ofSize: 16, weight: .regular),
+                         secondFont: UIFont = Font.robotoBold(size: 16).value,
                          secondColor: UIColor = .secondaryLabel) {
         
         let firstAttributedText = NSMutableAttributedString(

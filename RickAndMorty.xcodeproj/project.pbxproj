@@ -16,6 +16,7 @@
 		406B1403281A754600945452 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B1402281A754600945452 /* HomeViewModel.swift */; };
 		406B1405281A787200945452 /* CartoonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B1404281A787200945452 /* CartoonCharacter.swift */; };
 		406B1407281A7AE700945452 /* CharacterCellModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B1406281A7AE700945452 /* CharacterCellModel+Extensions.swift */; };
+		406B140C281A8A1800945452 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B140B281A8A1800945452 /* Font.swift */; };
 		40AD34C528196E9600F9D006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34C428196E9600F9D006 /* AppDelegate.swift */; };
 		40AD34C728196E9600F9D006 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34C628196E9600F9D006 /* SceneDelegate.swift */; };
 		40AD34CE28196E9800F9D006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40AD34CD28196E9800F9D006 /* Assets.xcassets */; };
@@ -52,6 +53,9 @@
 		406B1402281A754600945452 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		406B1404281A787200945452 /* CartoonCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonCharacter.swift; sourceTree = "<group>"; };
 		406B1406281A7AE700945452 /* CharacterCellModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterCellModel+Extensions.swift"; sourceTree = "<group>"; };
+		406B1409281A898900945452 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		406B140A281A899200945452 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		406B140B281A8A1800945452 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		40AD34C128196E9600F9D006 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40AD34C428196E9600F9D006 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40AD34C628196E9600F9D006 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,16 @@
 				406B1406281A7AE700945452 /* CharacterCellModel+Extensions.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		406B1408281A897100945452 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				406B1409281A898900945452 /* Roboto-Regular.ttf */,
+				406B140A281A899200945452 /* Roboto-Bold.ttf */,
+				406B140B281A8A1800945452 /* Font.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		40AD34B828196E9600F9D006 = {
@@ -210,6 +224,7 @@
 		40AD34E428197DB400F9D006 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				406B1408281A897100945452 /* Fonts */,
 				40AD34F228198FF600F9D006 /* Assets */,
 				40AD34CF28196E9800F9D006 /* LaunchScreen.storyboard */,
 			);
@@ -472,6 +487,7 @@
 				40AD34C728196E9600F9D006 /* SceneDelegate.swift in Sources */,
 				40AD34F42819A26300F9D006 /* UIImage+Icons.swift in Sources */,
 				406B13FD281A65F800945452 /* UILabel+Extensions.swift in Sources */,
+				406B140C281A8A1800945452 /* Font.swift in Sources */,
 				406B1405281A787200945452 /* CartoonCharacter.swift in Sources */,
 				40AD34DC2819764C00F9D006 /* HomeViewController.swift in Sources */,
 				40AD34ED281981A400F9D006 /* MainNavigator.swift in Sources */,

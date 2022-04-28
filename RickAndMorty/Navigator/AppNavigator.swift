@@ -36,7 +36,8 @@ final class AppNavigator: MainNavigator {
         window = UIWindow(windowScene: windowScene)
         switch screen {
         case .home:
-            let viewController = HomeViewController()
+            let viewModel = HomeViewModel(navigator: self)
+            let viewController = HomeViewController(viewModel: viewModel)
             let navigationController = UINavigationController(rootViewController: viewController)
             self.navigationController = navigationController
         }

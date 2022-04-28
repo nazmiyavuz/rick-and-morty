@@ -33,7 +33,7 @@ class BaseViewModel: BaseViewModelProtocol {
     
     var showWarningAlert: StringClosure?
     
-    let navigator: AppNavigator
+    internal let navigator: AppNavigator
     let networkService: NetworkServiceProtocol
     
     init(navigator: AppNavigator, networkService: NetworkServiceProtocol = NetworkService()) {

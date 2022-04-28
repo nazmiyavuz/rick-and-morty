@@ -21,6 +21,7 @@ protocol HomeViewEventSource {
 }
 
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
+    func navigateToFilterScreen()
     func fetchCharacters()
     func fetchMoreCharacters()
 }
@@ -28,6 +29,10 @@ protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
 // MARK: - View Model
 
 final class HomeViewModel: BaseViewModel, HomeViewProtocol {
+    
+    func navigateToFilterScreen() {
+        navigator.navigate(to: .filter)
+    }
     
     var isPagingEnabled = false
     
