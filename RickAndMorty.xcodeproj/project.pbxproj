@@ -21,6 +21,7 @@
 		406B1410281A905300945452 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406B140F281A905300945452 /* Icons.xcassets */; };
 		406B1412281A908600945452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 406B1411281A908600945452 /* Images.xcassets */; };
 		406B1414281A90C100945452 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B1413281A90C100945452 /* UIColor+Colors.swift */; };
+		406B1416281A92B300945452 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B1415281A92B300945452 /* String+Extensions.swift */; };
 		40AD34C528196E9600F9D006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34C428196E9600F9D006 /* AppDelegate.swift */; };
 		40AD34C728196E9600F9D006 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AD34C628196E9600F9D006 /* SceneDelegate.swift */; };
 		40AD34CE28196E9800F9D006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40AD34CD28196E9800F9D006 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		406B140F281A905300945452 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		406B1411281A908600945452 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		406B1413281A90C100945452 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		406B1415281A92B300945452 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		40AD34C128196E9600F9D006 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40AD34C428196E9600F9D006 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40AD34C628196E9600F9D006 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				406B13FC281A65F800945452 /* UILabel+Extensions.swift */,
 				406B13FE281A6A2500945452 /* UIView+Extensions.swift */,
 				406B1400281A6F2600945452 /* UIImageView+Extensions.swift */,
+				406B1415281A92B300945452 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				40AD35102819E06200F9D006 /* LoadingProtocol.swift in Sources */,
 				40AD35142819E4A100F9D006 /* BaseViewController.swift in Sources */,
 				406B13FF281A6A2500945452 /* UIView+Extensions.swift in Sources */,
+				406B1416281A92B300945452 /* String+Extensions.swift in Sources */,
 				40AD34C528196E9600F9D006 /* AppDelegate.swift in Sources */,
 				406B13F9281A5FDC00945452 /* CharacterCell.swift in Sources */,
 				406B1414281A90C100945452 /* UIColor+Colors.swift in Sources */,

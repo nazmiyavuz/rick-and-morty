@@ -19,12 +19,10 @@ enum Font {
         switch self {
             
         case .robotoRegular(size: let size):
-            return UIFont(name: "Roboto-Regular", size: size) ??
-                .systemFont(ofSize: size, weight: .regular)
+            return UIFont(name: "Roboto-Regular", size: size) ?? .systemFont(ofSize: size, weight: .regular)
             
         case .robotoBold(size: let size):
-            return UIFont(name: "Roboto-Bold", size: size) ??
-                .systemFont(ofSize: size, weight: .bold)
+            return UIFont(name: "Roboto-Bold", size: size) ?? .systemFont(ofSize: size, weight: .bold)
         }
     }
 }

@@ -12,10 +12,10 @@ extension UILabel {
     
     func createAttribute(first: String,
                          firstFont: UIFont = Font.robotoRegular(size: 16).value,
-                         firstColor: UIColor = .label,
+                         firstColor: UIColor = .appLabel,
                          second: String,
                          secondFont: UIFont = Font.robotoBold(size: 16).value,
-                         secondColor: UIColor = .secondaryLabel) {
+                         secondColor: UIColor = .appSecondaryLabel) {
         
         let firstAttributedText = NSMutableAttributedString(
             string: first,

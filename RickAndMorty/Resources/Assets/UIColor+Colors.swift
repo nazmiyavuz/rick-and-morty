@@ -10,9 +10,12 @@ import UIKit
 
 extension UIColor {
     
-    static let appPrimaryBackground: UIColor? = .init(named: "appPrimaryBackground")
-    static let appSecondaryBackground: UIColor? = .init(named: "appSecondaryBackground")
-    static let appLabel: UIColor? = .init(named: "appLabel")
-    static let appSecondaryLabel: UIColor? = .init(named: "appSecondaryLabel")
+    static let appPrimaryBackground: UIColor = .init(named: "appPrimaryBackground") ?? "#E5E5E5".hexStringConvertToUIColor()
+    
+    static let appSecondaryBackground: UIColor = .init(named: "appSecondaryBackground") ?? "#FFFFFF".hexStringConvertToUIColor()
+    
+    static let appLabel: UIColor = .init(named: "appLabel") ?? "#000000".hexStringConvertToUIColor()
+    
+    static let appSecondaryLabel: UIColor? = .init(named: "appSecondaryLabel") ?? .gray
     
 }
