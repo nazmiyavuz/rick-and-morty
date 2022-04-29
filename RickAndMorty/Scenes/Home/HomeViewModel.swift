@@ -31,8 +31,8 @@ protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
 final class HomeViewModel: BaseViewModel, HomeViewProtocol {
     
     func navigateToFilterScreen() {
-        Logger.debug("FilterButtonTapped")
-//        navigator.navigate(to: .filter)
+//        Logger.debug("FilterButtonTapped")
+        navigator.navigate(to: .filter)
     }
     
     var isPagingEnabled = false

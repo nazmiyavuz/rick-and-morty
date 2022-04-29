@@ -16,12 +16,12 @@ class CharacterCellModelTests: XCTestCase {
     var sut: CharacterCellModel?
 
     func test_init() {
-        // Act
+        // When
         sut = CharacterCellModel(characterId: "1",
                                  characterImageUrl: "https://www.image.com",
                                  characterName: "Rick Sanchez",
                                  characterLocation: "Citadel of Ricks")
-        // Assert
+        // Then
         XCTAssertEqual(sut?.characterId, "1")
         XCTAssertNotEqual(sut?.characterId, "2")
         XCTAssertEqual(sut?.characterImageUrl, "https://www.image.com")
@@ -34,7 +34,7 @@ class CharacterCellModelTests: XCTestCase {
     }
     
     func test_convenienceInit_notNilValue() {
-        // Arrange
+        // Given
         let location = GetCharactersQuery.Data.Character.Result.Location(name: "Citadel of Ricks")
         
         result = GetCharactersQuery.Data.Character
@@ -42,24 +42,26 @@ class CharacterCellModelTests: XCTestCase {
                     name: "Morty Smith",
                     image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
                     location: location)
-        // Act
+        // When
         sut = CharacterCellModel(character: result)
-        // Assert
-        XCTAssertEqual(sut?.characterId, "2")
+        // Then
+        XCTAssertNotNil(sut)
+        XCTAssertEqual(sut?.characterId, result?.id)
         XCTAssertNotEqual(sut?.characterId, "3")
-        XCTAssertEqual(sut?.characterImageUrl, "https://rickandmortyapi.com/api/character/avatar/2.jpeg")
+        XCTAssertEqual(sut?.characterImageUrl, result?.image)
         XCTAssertNotEqual(sut?.characterImageUrl, "https://www.image2.com")
-        XCTAssertEqual(sut?.characterName, "Morty Smith")
+        XCTAssertEqual(sut?.characterName, result?.name)
         XCTAssertNotEqual(sut?.characterName, "Rick Sanchez")
-        XCTAssertEqual(sut?.characterLocation, "Citadel of Ricks")
+        XCTAssertEqual(sut?.characterLocation, location.name)
         XCTAssertNotEqual(sut?.characterLocation, "Earth (Replacement Dimension)")
 
     }
     
     func test_convenienceInit_nilValue() {
-        // Act
+        // When
         sut = CharacterCellModel(character: result)
-        // Assert
+        // Then
+        XCTAssertNotNil(sut)
         XCTAssertEqual(sut?.characterId, "")
         XCTAssertNotEqual(sut?.characterId, "3")
         XCTAssertEqual(sut?.characterImageUrl, "")

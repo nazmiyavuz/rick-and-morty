@@ -8,11 +8,11 @@
 import UIKit
 
 /// to navigate the screens in an easy way
-protocol MainNavigator {
+protocol MainNavigator: AnyObject {
     /// First screen which is at the beginning of the app
-    associatedtype StartScreen
+//    associatedtype StartScreen
     /// General destination which is a screen, you want to display
-    associatedtype Destination
+//    associatedtype Destination
     
     /**
     Start application in the beginning from StartScreen that is an associated type
