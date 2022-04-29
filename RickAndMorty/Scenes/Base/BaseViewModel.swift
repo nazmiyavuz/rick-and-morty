@@ -36,7 +36,8 @@ class BaseViewModel: BaseViewModelProtocol {
     internal let navigator: MainNavigator
     let networkService: NetworkServiceProtocol
     
-    init(navigator: MainNavigator, networkService: NetworkServiceProtocol = NetworkService()) {
+    init(navigator: MainNavigator,
+         networkService: NetworkServiceProtocol = NetworkService()) {
         self.navigator = navigator
         self.networkService = networkService
     }

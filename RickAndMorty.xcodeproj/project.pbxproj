@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		401EA84D281C1CA700527864 /* RickAndMortyIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EA84C281C1CA700527864 /* RickAndMortyIntegrationTests.swift */; };
+		401EA855281C1D4D00527864 /* NetworkServiceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EA854281C1D4D00527864 /* NetworkServiceIntegrationTests.swift */; };
 		40412E37281BB604002309DD /* CharacterCellModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40412E36281BB604002309DD /* CharacterCellModelTests.swift */; };
 		40412E3D281BC906002309DD /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40412E3C281BC906002309DD /* HomeViewModelTests.swift */; };
 		40412E40281BCD6C002309DD /* MockAppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40412E3F281BCD6C002309DD /* MockAppNavigator.swift */; };
@@ -77,7 +77,7 @@
 
 /* Begin PBXFileReference section */
 		401EA84A281C1CA700527864 /* RickAndMortyIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		401EA84C281C1CA700527864 /* RickAndMortyIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyIntegrationTests.swift; sourceTree = "<group>"; };
+		401EA854281C1D4D00527864 /* NetworkServiceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceIntegrationTests.swift; sourceTree = "<group>"; };
 		40412E2D281BB5AA002309DD /* RickAndMortyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40412E36281BB604002309DD /* CharacterCellModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellModelTests.swift; sourceTree = "<group>"; };
 		40412E3C281BC906002309DD /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
@@ -164,9 +164,17 @@
 		401EA84B281C1CA700527864 /* RickAndMortyIntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
-				401EA84C281C1CA700527864 /* RickAndMortyIntegrationTests.swift */,
+				401EA853281C1D3700527864 /* Services */,
 			);
 			path = RickAndMortyIntegrationTests;
+			sourceTree = "<group>";
+		};
+		401EA853281C1D3700527864 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				401EA854281C1D4D00527864 /* NetworkServiceIntegrationTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		40412E2E281BB5AA002309DD /* RickAndMortyTests */ = {
@@ -699,7 +707,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				401EA84D281C1CA700527864 /* RickAndMortyIntegrationTests.swift in Sources */,
+				401EA855281C1D4D00527864 /* NetworkServiceIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

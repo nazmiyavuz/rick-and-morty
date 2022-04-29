@@ -25,9 +25,24 @@ enum FilterOption: String {
     case morty
 }
 
-class NetworkService: NetworkServiceProtocol {
+final class NetworkService: NetworkServiceProtocol {
+    
+    private var urlString: String
+    
     // "https://rickandmortyapi.com/graphql"
-    private lazy var apollo = ApolloClient(url: URL(string: "https://rickandmortyapi.com/graphql")!)
+    lazy var apollo = ApolloClient(url: URL(string: urlString)!)
+    
+    init(_ url: String = "https://rickandmortyapi.com/graphql") {
+        
+        self.urlString = url
+        
+//        if let urlString = url {
+//            self.urlString = urlString
+//        } else {
+//            self.urlString = "https://rickandmortyapi.com/graphql"
+//        }
+        
+    }
     
     func fetchCharacters(page: Int, filter: FilterOption?, completion: @escaping CharacterResult) {
         
