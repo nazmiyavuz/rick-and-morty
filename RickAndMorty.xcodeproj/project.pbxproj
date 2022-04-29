@@ -139,9 +139,35 @@
 		40412E2E281BB5AA002309DD /* RickAndMortyTests */ = {
 			isa = PBXGroup;
 			children = (
-				40412E36281BB604002309DD /* CharacterCellModelTests.swift */,
+				40412E38281BC77A002309DD /* Cell */,
+				40412E39281BC877002309DD /* Scenes */,
 			);
 			path = RickAndMortyTests;
+			sourceTree = "<group>";
+		};
+		40412E38281BC77A002309DD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				40412E36281BB604002309DD /* CharacterCellModelTests.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		40412E39281BC877002309DD /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		40412E3A281BC8A0002309DD /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				406B13F8281A5FDC00945452 /* CharacterCell.swift */,
+				406B13F6281A5CA100945452 /* CharacterCellModel.swift */,
+				406B1406281A7AE700945452 /* CharacterCellModel+Extensions.swift */,
+			);
+			path = Character;
 			sourceTree = "<group>";
 		};
 		406B13F4281A5B6400945452 /* Home */ = {
@@ -156,9 +182,7 @@
 		406B13F5281A5B7B00945452 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				406B13F8281A5FDC00945452 /* CharacterCell.swift */,
-				406B13F6281A5CA100945452 /* CharacterCellModel.swift */,
-				406B1406281A7AE700945452 /* CharacterCellModel+Extensions.swift */,
+				40412E3A281BC8A0002309DD /* Character */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
