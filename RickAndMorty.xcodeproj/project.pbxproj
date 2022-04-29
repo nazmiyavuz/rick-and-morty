@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		401EA855281C1D4D00527864 /* NetworkServiceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EA854281C1D4D00527864 /* NetworkServiceIntegrationTests.swift */; };
+		401EA85C281C649700527864 /* FilterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EA85B281C649700527864 /* FilterViewControllerTests.swift */; };
+		401EA85F281C652600527864 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EA85E281C652600527864 /* FilterViewController.swift */; };
+		401EA861281C655900527864 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EA860281C655900527864 /* FilterViewModel.swift */; };
+		401EA863281C6DA200527864 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EA862281C6DA200527864 /* NotificationNames.swift */; };
+		401EA865281C6DE500527864 /* MockFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EA864281C6DE500527864 /* MockFilterViewModel.swift */; };
+		401EA868281C70B500527864 /* FilterChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401EA867281C70B500527864 /* FilterChoiceView.swift */; };
 		40412E37281BB604002309DD /* CharacterCellModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40412E36281BB604002309DD /* CharacterCellModelTests.swift */; };
 		40412E3D281BC906002309DD /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40412E3C281BC906002309DD /* HomeViewModelTests.swift */; };
 		40412E40281BCD6C002309DD /* MockAppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40412E3F281BCD6C002309DD /* MockAppNavigator.swift */; };
@@ -78,6 +84,12 @@
 /* Begin PBXFileReference section */
 		401EA84A281C1CA700527864 /* RickAndMortyIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		401EA854281C1D4D00527864 /* NetworkServiceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceIntegrationTests.swift; sourceTree = "<group>"; };
+		401EA85B281C649700527864 /* FilterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewControllerTests.swift; sourceTree = "<group>"; };
+		401EA85E281C652600527864 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		401EA860281C655900527864 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		401EA862281C6DA200527864 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
+		401EA864281C6DE500527864 /* MockFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFilterViewModel.swift; sourceTree = "<group>"; };
+		401EA867281C70B500527864 /* FilterChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChoiceView.swift; sourceTree = "<group>"; };
 		40412E2D281BB5AA002309DD /* RickAndMortyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40412E36281BB604002309DD /* CharacterCellModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellModelTests.swift; sourceTree = "<group>"; };
 		40412E3C281BC906002309DD /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
@@ -177,6 +189,31 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		401EA85A281C646A00527864 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				401EA85B281C649700527864 /* FilterViewControllerTests.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		401EA85D281C64B000527864 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				401EA85E281C652600527864 /* FilterViewController.swift */,
+				401EA860281C655900527864 /* FilterViewModel.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		401EA866281C709500527864 /* Filter Choice */ = {
+			isa = PBXGroup;
+			children = (
+				401EA867281C70B500527864 /* FilterChoiceView.swift */,
+			);
+			path = "Filter Choice";
+			sourceTree = "<group>";
+		};
 		40412E2E281BB5AA002309DD /* RickAndMortyTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				40412E3B281BC8F0002309DD /* Home */,
+				401EA85A281C646A00527864 /* Filter */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -227,6 +265,7 @@
 			children = (
 				40412E3F281BCD6C002309DD /* MockAppNavigator.swift */,
 				40412E43281BE47E002309DD /* MockHomeViewModel.swift */,
+				401EA864281C6DE500527864 /* MockFilterViewModel.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -321,6 +360,7 @@
 			children = (
 				40AD34FC2819DC1B00F9D006 /* Base */,
 				406B13F4281A5B6400945452 /* Home */,
+				401EA85D281C64B000527864 /* Filter */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -328,6 +368,7 @@
 		40AD34E028197C3300F9D006 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				401EA866281C709500527864 /* Filter Choice */,
 				406B13F5281A5B7B00945452 /* Cells */,
 				40AD350A2819DF6700F9D006 /* Loading */,
 				40AD35052819DE3800F9D006 /* UIActivityIndicatorView */,
@@ -423,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				40AD34FA2819DA7300F9D006 /* Closures.swift */,
+				401EA862281C6DA200527864 /* NotificationNames.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -717,6 +759,8 @@
 			files = (
 				40412E40281BCD6C002309DD /* MockAppNavigator.swift in Sources */,
 				40412E37281BB604002309DD /* CharacterCellModelTests.swift in Sources */,
+				401EA85C281C649700527864 /* FilterViewControllerTests.swift in Sources */,
+				401EA865281C6DE500527864 /* MockFilterViewModel.swift in Sources */,
 				40412E3D281BC906002309DD /* HomeViewModelTests.swift in Sources */,
 				40412E44281BE47E002309DD /* MockHomeViewModel.swift in Sources */,
 				40412E42281BE463002309DD /* HomeViewControllerTests.swift in Sources */,
@@ -737,10 +781,12 @@
 				406B13F9281A5FDC00945452 /* CharacterCell.swift in Sources */,
 				406B1414281A90C100945452 /* UIColor+Colors.swift in Sources */,
 				40AD35122819E3E600F9D006 /* UIApplication+Extensions.swift in Sources */,
+				401EA861281C655900527864 /* FilterViewModel.swift in Sources */,
 				40AD34F82819A6DA00F9D006 /* UIImage+Images.swift in Sources */,
 				40AD34EB2819814400F9D006 /* ReusableView.swift in Sources */,
 				40AD34EF281981E200F9D006 /* AppNavigator.swift in Sources */,
 				406B1403281A754600945452 /* HomeViewModel.swift in Sources */,
+				401EA85F281C652600527864 /* FilterViewController.swift in Sources */,
 				40AD34F12819838300F9D006 /* UITableView+Extensions.swift in Sources */,
 				40AD34FE2819DC2900F9D006 /* BaseViewModel.swift in Sources */,
 				40AD34C728196E9600F9D006 /* SceneDelegate.swift in Sources */,
@@ -749,6 +795,7 @@
 				406B140C281A8A1800945452 /* Font.swift in Sources */,
 				406B1405281A787200945452 /* CartoonCharacter.swift in Sources */,
 				40AD34DC2819764C00F9D006 /* HomeViewController.swift in Sources */,
+				401EA868281C70B500527864 /* FilterChoiceView.swift in Sources */,
 				40AD34ED281981A400F9D006 /* MainNavigator.swift in Sources */,
 				40AD34E9281980E100F9D006 /* Logger.swift in Sources */,
 				40AD35012819DC9000F9D006 /* NetworkService.swift in Sources */,
@@ -758,6 +805,7 @@
 				40AD350E2819DFF200F9D006 /* BlockingActivityIndicator.swift in Sources */,
 				40AD35072819DE6400F9D006 /* ActivityIndicatorView.swift in Sources */,
 				40AD351A2819EAFE00F9D006 /* Alert.swift in Sources */,
+				401EA863281C6DA200527864 /* NotificationNames.swift in Sources */,
 				40AD350C2819DF7A00F9D006 /* ActivityIndicatorProtocol.swift in Sources */,
 				409928F4281AD2D00068E773 /* API.swift in Sources */,
 				406B13FB281A60C800945452 /* ReusableView+Extensions.swift in Sources */,

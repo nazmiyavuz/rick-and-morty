@@ -12,7 +12,7 @@ enum StartScreen {
 }
 
 enum Destination {
-    case filter
+    case filter(FilterOption?)
 }
 
 final class AppNavigator: MainNavigator {
@@ -50,10 +50,14 @@ final class AppNavigator: MainNavigator {
     func navigate(to destination: Destination) {
         switch destination {
             
-        case .filter:
+        case .filter(let filter):
+            let viewModel = FilterViewModel(navigator: self, filter: filter)
+            let viewController = FilterViewController(viewModel: viewModel)
+            let navigationController = UINavigationController(rootViewController: viewController)
             
-            let viewController = HomeViewController(viewModel: HomeViewModel(navigator: self))
-            self.navigationController?.pushViewController(viewController, animated: true)
+            navigationController.modalPresentationStyle = .overCurrentContext
+            
+            self.navigationController?.present(navigationController, animated: true)
         }
     }
     
