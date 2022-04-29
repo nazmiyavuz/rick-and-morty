@@ -28,12 +28,7 @@ protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
 
 // MARK: - View Model
 
-final class HomeViewModel: BaseViewModel, HomeViewProtocol {
-    
-    func navigateToFilterScreen() {
-        Logger.debug("FilterButtonTapped")
-//        navigator.navigate(to: .filter)
-    }
+class HomeViewModel: BaseViewModel, HomeViewProtocol {
     
     var isPagingEnabled = false
     
@@ -55,14 +50,17 @@ final class HomeViewModel: BaseViewModel, HomeViewProtocol {
         return cellItems.count
     }
     
+    func navigateToFilterScreen() {
+//        Logger.debug("FilterButtonTapped")
+        navigator.navigate(to: .filter)
+    }
+    
     func cellItem(for indexPath: IndexPath) -> CharacterCellProtocol {
         let item = cellItems[indexPath.row]
         return item
     }
-}
-
-// MARK: - Network
-extension HomeViewModel {
+    
+    // MARK: - Network
     
     func fetchCharacters() {
         

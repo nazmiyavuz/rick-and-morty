@@ -11,7 +11,7 @@ import SnapKit
 class HomeViewController: BaseViewController<HomeViewModel> {
     
     // MARK: - Views
-    private let tableView: UITableView = {
+    lazy var tableView: UITableView = {
         $0.separatorStyle = .none
         $0.backgroundColor = .appPrimaryBackground
         $0.showsVerticalScrollIndicator = false
@@ -29,7 +29,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         subscribeViewModelEvents()
     }
     
-    private func subscribeViewModelEvents() {
+    func subscribeViewModelEvents() {
         
         viewModel.didSuccessFetchCharacters = { [weak self] (isFirstLoading, indexPathList) in
             guard let self = self else { return }
@@ -85,6 +85,7 @@ extension HomeViewController {
     
     @objc
     private func filterButtonTapped() {
+//        Logger.debug("tapped")
         viewModel.navigateToFilterScreen()
     }
 }
@@ -122,6 +123,8 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Logger.debug("Selected")
+        let item = viewModel.cellItem(for: indexPath)
+        let name = item.characterName
+        Logger.debug("Selected character: \(name)")
     }
 }

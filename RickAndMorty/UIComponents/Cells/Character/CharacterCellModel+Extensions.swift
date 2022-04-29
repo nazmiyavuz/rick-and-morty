@@ -11,7 +11,6 @@ import Foundation
 extension CharacterCellModel {
     
     convenience init(character: GetCharactersQuery.Data.Character.Result?) {
-        
         self.init(
             characterId: character?.id ?? "",
             characterImageUrl: character?.image ?? "",

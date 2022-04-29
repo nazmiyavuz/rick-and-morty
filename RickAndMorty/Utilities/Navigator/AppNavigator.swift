@@ -7,15 +7,15 @@
 
 import UIKit
 
+enum StartScreen {
+    case home
+}
+
+enum Destination {
+    case filter
+}
+
 final class AppNavigator: MainNavigator {
-    
-    enum StartScreen {
-        case home
-    }
-    
-    enum Destination {
-        case filter
-    }
     
     static let shared = AppNavigator()
         

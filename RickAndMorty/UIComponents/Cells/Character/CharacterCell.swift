@@ -13,30 +13,30 @@ class CharacterCell: UITableViewCell, ReusableView {
     
     // MARK: - UIViews
     
-    private let cardView: UIView = {
+    lazy var cardView: UIView = {
         $0.backgroundColor = .appSecondaryBackground
         return $0
     }(UIView())
     
-    private let characterImageView: UIImageView = {
+    lazy var characterImageView: UIImageView = {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
         $0.isUserInteractionEnabled = true
         return $0
     }(UIImageView())
     
-    private let idLabel: UILabel = {
+    lazy var idLabel: UILabel = {
         $0.createAttribute(first: "#ID: ", second: "1")
         $0.textAlignment = .right
         return $0
     }(UILabel())
     
-    private let nameLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         $0.createAttribute(first: "Name: ", second: "Rick Shancez")
         return $0
     }(UILabel())
     
-    private let locationLabel: UILabel = {
+    lazy var locationLabel: UILabel = {
         $0.createAttribute(first: "Location: ", second: "Earth")
         $0.numberOfLines = 0
         return $0
@@ -139,7 +139,7 @@ extension CharacterCell {
     func set(with viewModel: CharacterCellProtocol) {
         self.viewModel = viewModel
         characterImageView.setImage(viewModel.characterImageUrl, placeholder: .mockCellImage)
-        idLabel.createAttribute(first: "#id: ", second: "\(viewModel.characterId)")
+        idLabel.createAttribute(first: "#id: ", second: viewModel.characterId)
         nameLabel.createAttribute(first: "Name: ", second: viewModel.characterName)
         locationLabel.createAttribute(first: "Location: ", second: viewModel.characterLocation)
     }
