@@ -33,11 +33,50 @@ class NetworkServiceIntegrationTests: XCTestCase {
             XCTAssertNotNil(data)
             XCTAssertEqual(characters.count, 20)
             XCTAssertNotEqual(characters.count, 2)
+            XCTAssertEqual(data.info?.count, 826)
+            XCTAssertEqual(data.info?.pages, 42)
             XCTAssertEqual(characters.first?.id, "1")
             XCTAssertEqual(characters.first?.name, "Rick Sanchez")
             XCTAssertEqual(characters.first?.image, "https://rickandmortyapi.com/api/character/avatar/1.jpeg")
             XCTAssertEqual(characters.first?.location?.name, "Citadel of Ricks")
             XCTAssertNotEqual(characters.first?.id, "2")
+            XCTAssertNotEqual(characters.first?.name, "Rick")
+            XCTAssertNotEqual(characters.first?.image, "")
+            XCTAssertNotEqual(characters.first?.location?.name, "")
+            expectation.fulfill()
+        }
+        self.wait(for: [expectation], timeout: 2)
+    }
+    
+    func test_graphQLRemoteData_shouldReturnsFilteredCharacters() {
+        // Given
+        let expectation = self.expectation(description: "GraphQL Web Service Response Expectation")
+        let sut = makeSut("https://rickandmortyapi.com/graphql")
+        // When
+        sut.fetchCharacters(page: 1, filter: .morty) { (result) in
+            guard let data = try? result.get() else {
+                XCTFail("Getting nil value")
+                expectation.fulfill()
+                return
+            }
+            
+            let results = data.results?.compactMap { $0 }
+            guard let characters = results else {
+                XCTFail("Getting nil value")
+                expectation.fulfill()
+                return
+            }
+            // Then
+            XCTAssertNotNil(data)
+            XCTAssertEqual(characters.count, 20)
+            XCTAssertNotEqual(characters.count, 2)
+            XCTAssertEqual(data.info?.count, 68)
+            XCTAssertEqual(data.info?.pages, 4)
+            XCTAssertEqual(characters.first?.id, "2")
+            XCTAssertEqual(characters.first?.name, "Morty Smith")
+            XCTAssertEqual(characters.first?.image, "https://rickandmortyapi.com/api/character/avatar/2.jpeg")
+            XCTAssertEqual(characters.first?.location?.name, "Citadel of Ricks")
+            XCTAssertNotEqual(characters.first?.id, "1")
             XCTAssertNotEqual(characters.first?.name, "Rick")
             XCTAssertNotEqual(characters.first?.image, "")
             XCTAssertNotEqual(characters.first?.location?.name, "")

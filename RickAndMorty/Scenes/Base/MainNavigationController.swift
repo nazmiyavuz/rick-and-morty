@@ -44,10 +44,4 @@ class MainNavigationController: UINavigationController {
         
     }
     
-    #if DEBUG
-    deinit {
-        debugPrint("deinit \(self)")
-    }
-    #endif
-    
 }

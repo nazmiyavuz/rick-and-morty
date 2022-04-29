@@ -33,15 +33,7 @@ final class NetworkService: NetworkServiceProtocol {
     lazy var apollo = ApolloClient(url: URL(string: urlString)!)
     
     init(_ url: String = "https://rickandmortyapi.com/graphql") {
-        
         self.urlString = url
-        
-//        if let urlString = url {
-//            self.urlString = urlString
-//        } else {
-//            self.urlString = "https://rickandmortyapi.com/graphql"
-//        }
-        
     }
     
     func fetchCharacters(page: Int, filter: FilterOption?, completion: @escaping CharacterResult) {
