@@ -62,9 +62,9 @@ class HomeViewModelTests: XCTestCase {
     
     func test_cellItemForIndexPath_shouldReturnACharacterCellProtocol() {
         // Given
-        let characterCellViewModel = CharacterCellModel(character: nil)
+        let characterCellModel = CharacterCellModel(character: nil)
         // When
-        sut.cellItems.append(characterCellViewModel)
+        sut.cellItems.append(characterCellModel)
         let item = sut.cellItem(for: [0, 0])
         // Then
         XCTAssertEqual(sut.cellItems.count, 1)

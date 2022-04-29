@@ -26,7 +26,7 @@ enum FilterOption: String {
 }
 
 class NetworkService: NetworkServiceProtocol {
-    
+    // "https://rickandmortyapi.com/graphql"
     private lazy var apollo = ApolloClient(url: URL(string: "https://rickandmortyapi.com/graphql")!)
     
     func fetchCharacters(page: Int, filter: FilterOption?, completion: @escaping CharacterResult) {
@@ -44,27 +44,6 @@ class NetworkService: NetworkServiceProtocol {
             }
         }
         
-//        if isSuccess {
-//            let characterList = createMockCartoonCharacter()
-//            completion(.success(characterList))
-//        } else {
-//            completion(.failure(NetworkError.unKnown))
-//        }
-        
     }
     
-}
-
-// TODO: Delete before merge
-extension NetworkService {
-    
-    private func createMockCartoonCharacter() -> [CartoonCharacter] {
-        return (1...20).map { charID -> CartoonCharacter in
-            let name = charID % 2 == 0 ? "Morty" : "Rick"
-            let location = charID % 2 == 0 ? "Izmir" : "Istanbul"
-            let imageUrl = "https://rickandmortyapi.com/api/character/avatar/\(charID).jpeg"
-            return CartoonCharacter(id: charID, imageURL: imageUrl, name: name, location: location)
-        }
-        
-    }
 }
