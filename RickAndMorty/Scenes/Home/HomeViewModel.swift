@@ -51,8 +51,7 @@ class HomeViewModel: BaseViewModel, HomeViewProtocol {
     }
     
     func navigateToFilterScreen() {
-//        Logger.debug("FilterButtonTapped")
-        navigator.navigate(to: .filter(nil))
+        navigator.navigate(to: .filter(filter))
     }
     
     func cellItem(for indexPath: IndexPath) -> CharacterCellProtocol {

@@ -35,7 +35,7 @@ public class FilterChoiceView: UIView {
     
     // MARK: - Properties
     
-    var isSelected: Bool = false {
+    var isSelected = false {
         willSet {
             switch newValue {
             case true:  radioImageView.image = .radioOnIcon

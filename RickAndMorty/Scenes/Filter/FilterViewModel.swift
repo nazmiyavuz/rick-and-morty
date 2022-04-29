@@ -13,7 +13,7 @@ protocol FilterViewDataSource {}
 protocol FilterViewEventSource {}
 
 protocol FilterViewProtocol: FilterViewDataSource, FilterViewEventSource {
-    func postNotification()
+    func postNotification(with filter: FilterOption)
 }
 
 class FilterViewModel: BaseViewModel, FilterViewProtocol {
@@ -27,10 +27,12 @@ class FilterViewModel: BaseViewModel, FilterViewProtocol {
     
     // MARK: - Actions
     
-    func postNotification() {
-        //
+    func postNotification(with filter: FilterOption) {
+        let object: FilterOption? = filter == self.filter ? nil : filter
+        let filterDict: [String: FilterOption?] = ["filter": object]
+        NotificationCenter.default.post(
+            name: .changeFilterOption, object: nil,
+            userInfo: filterDict as [AnyHashable: Any])
     }
     
 }
-
-

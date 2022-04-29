@@ -23,6 +23,13 @@ protocol NetworkServiceProtocol {
 enum FilterOption: String {
     case rick
     case morty
+    
+    init(tag: Int) {
+        switch tag {
+        case 0:  self = .rick
+        default: self = .morty
+        }
+    }
 }
 
 final class NetworkService: NetworkServiceProtocol {

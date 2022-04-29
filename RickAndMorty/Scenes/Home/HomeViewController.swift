@@ -19,6 +19,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         return $0
     }(UITableView())
     
+    private var observer: NSObjectProtocol?
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -36,8 +38,10 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             switch isFirstLoading {
             case true:
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
                     self.viewModel.isFirstLoading = false
+                    self.tableView.reloadData()
+                    guard self.tableView.numberOfRows(inSection: 0) > 0 else { return } // Safety Check
+                    self.tableView.scrollToRow(at: [0, 0], at: .top, animated: true)
                 }
                 
             case false:
@@ -45,6 +49,18 @@ class HomeViewController: BaseViewController<HomeViewModel> {
                 
             }
         }
+    }
+    
+    private func addObserver() {
+        let center = NotificationCenter.default
+        observer = center.addObserver(forName: .changeFilterOption,
+                                      object: nil,
+                                      queue: nil,
+                                      using: { [weak self] (notification) in
+                self?.viewModel.filter = notification.userInfo?["filter"] as? FilterOption
+                self?.viewModel.fetchCharacters()
+                center.removeObserver(self?.observer as Any)
+            })
     }
     
 }
@@ -85,7 +101,7 @@ extension HomeViewController {
     
     @objc
     private func filterButtonTapped() {
-//        Logger.debug("tapped")
+        addObserver()
         viewModel.navigateToFilterScreen()
     }
 }

@@ -37,6 +37,7 @@ final class FilterViewController: BaseViewController<FilterViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
+        configureContents()
     }
     
 }
@@ -88,6 +89,19 @@ extension FilterViewController {
     }
 }
 
+// MARK: - Configure and Localize
+extension FilterViewController {
+    
+    private func configureContents() {
+        guard let filter = viewModel.filter else { return }
+        switch filter {
+        case .rick:  rickChoiceView.isSelected = true
+        case .morty: mortyChoiceView.isSelected = true
+        }
+    }
+    
+}
+
 // MARK: - Actions
 extension FilterViewController {
     
@@ -99,6 +113,9 @@ extension FilterViewController {
     
     @objc
     private func didTapChoiceButton(_ button: UIButton) {
+        self.dismiss(animated: true) { [weak self] in
+            self?.viewModel.postNotification(with: FilterOption(tag: button.tag))
+        }
         Logger.debug("DEBUG: did tapped button. Button.tag: \(button.tag)")
     }
     
