@@ -139,7 +139,7 @@ extension CharacterCell {
     func set(with viewModel: CharacterCellProtocol) {
         self.viewModel = viewModel
         characterImageView.setImage(viewModel.characterImageUrl, placeholder: .mockCellImage)
-        idLabel.createAttribute(first: "#id: ", second: "\(viewModel.characterId)")
+        idLabel.createAttribute(first: "#id: ", second: viewModel.characterId)
         nameLabel.createAttribute(first: "Name: ", second: viewModel.characterName)
         locationLabel.createAttribute(first: "Location: ", second: viewModel.characterLocation)
     }
