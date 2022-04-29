@@ -25,7 +25,7 @@ final class AppNavigator: MainNavigator {
     
     // MARK: Initialiser
     private init() {
-        self.window?.backgroundColor = .white
+        self.window?.backgroundColor = .appPrimaryBackground
     }
     
     // MARK: - Start
@@ -36,12 +36,12 @@ final class AppNavigator: MainNavigator {
         window = UIWindow(windowScene: windowScene)
         switch screen {
         case .home:
-            let viewController = HomeViewController()
-            let navigationController = UINavigationController(rootViewController: viewController)
+            let viewModel = HomeViewModel(navigator: self)
+            let viewController = HomeViewController(viewModel: viewModel)
+            let navigationController = MainNavigationController(rootViewController: viewController)
             self.navigationController = navigationController
         }
         
-        navigationController?.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = self.navigationController
         window?.makeKeyAndVisible()
     }
@@ -52,7 +52,7 @@ final class AppNavigator: MainNavigator {
             
         case .filter:
             
-            let viewController = HomeViewController()
+            let viewController = HomeViewController(viewModel: HomeViewModel(navigator: self))
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }

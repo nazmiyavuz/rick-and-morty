@@ -12,4 +12,6 @@ extension UIImage {
     
     static var emptyCellImage: UIImage? = .init(named: "emptyCellImage")
     
+    static var mockCellImage: UIImage? = .init(named: "mockCellImage")
+
 }
