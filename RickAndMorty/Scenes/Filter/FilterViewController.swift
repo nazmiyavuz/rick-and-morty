@@ -9,11 +9,15 @@
 import UIKit
 import SnapKit
 
-final class FilterViewController: BaseViewController<FilterViewModel> {
+protocol FilterViewControllerDelegate: AnyObject {
+    func didSendFilter(filter: FilterOption?)
+}
+
+class FilterViewController: BaseViewController<FilterViewModel> {
     
     // MARK: - Views
     
-    private lazy var cancelButton: UIButton = {
+    lazy var cancelButton: UIButton = {
         $0.backgroundColor = .black.withAlphaComponent(0.7)
         $0.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         return $0
@@ -31,6 +35,8 @@ final class FilterViewController: BaseViewController<FilterViewModel> {
     
     lazy var rickButton = UIButton(type: .system)
     lazy var mortyButton = UIButton(type: .system)
+    
+    weak var delegate: FilterViewControllerDelegate?
     
     // MARK: - LifeCycle
     
@@ -112,11 +118,13 @@ extension FilterViewController {
     }
     
     @objc
-    private func didTapChoiceButton(_ button: UIButton) {
+    func didTapChoiceButton(_ button: UIButton) {
+        
         self.dismiss(animated: true) { [weak self] in
-            self?.viewModel.postNotification(with: FilterOption(tag: button.tag))
+            let pressedFilter = FilterOption(tag: button.tag)
+            let filter: FilterOption? = (self?.viewModel.filter == pressedFilter) ? nil : pressedFilter
+            self?.delegate?.didSendFilter(filter: filter)
         }
-        Logger.debug("DEBUG: did tapped button. Button.tag: \(button.tag)")
     }
     
 }

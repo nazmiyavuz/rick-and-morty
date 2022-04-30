@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - Protocol
 
@@ -21,7 +22,7 @@ protocol HomeViewEventSource {
 }
 
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
-    func navigateToFilterScreen()
+    func navigateToFilterScreen(fromVC: UIViewController)
     func fetchCharacters()
     func fetchMoreCharacters()
 }
@@ -50,8 +51,8 @@ class HomeViewModel: BaseViewModel, HomeViewProtocol {
         return cellItems.count
     }
     
-    func navigateToFilterScreen() {
-        navigator.navigate(to: .filter(filter))
+    func navigateToFilterScreen(fromVC: UIViewController) {
+        navigator.navigate(to: .filter(filter, fromVC))
     }
     
     func cellItem(for indexPath: IndexPath) -> CharacterCellProtocol {

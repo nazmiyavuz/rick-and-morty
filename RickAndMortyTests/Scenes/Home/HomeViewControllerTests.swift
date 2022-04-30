@@ -65,7 +65,6 @@ class HomeViewControllerTests: XCTestCase {
         let cell = sut.tableView.cellForRow(at: [0, 0]) as? CharacterCell
         // Then
         XCTAssertNotNil(cell)
-        XCTAssertEqual(cell?.characterImageView.image, .mockCellImage)
         XCTAssertEqual(cell?.idLabel.attributedText?.string, "#id: 1")
         XCTAssertEqual(cell?.nameLabel.attributedText?.string, "Name: Rick")
         XCTAssertEqual(cell?.locationLabel.attributedText?.string, "Location: Istanbul")

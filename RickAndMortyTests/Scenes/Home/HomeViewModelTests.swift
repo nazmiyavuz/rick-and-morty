@@ -54,7 +54,8 @@ class HomeViewModelTests: XCTestCase {
     
     func test_navigateToFilterScreen_shouldGoToFilterScreen() {
         // When
-        sut.navigateToFilterScreen()
+        let viewController = HomeViewController(viewModel: sut)
+        sut.navigateToFilterScreen(fromVC: viewController)
         // Then
         XCTAssertTrue(mockAppNavigator.didGoToDestination)
         

@@ -20,7 +20,7 @@ protocol NetworkServiceProtocol {
     func fetchCharacters(page: Int, filter: FilterOption?, completion: @escaping CharacterResult)
 }
 
-enum FilterOption: String {
+enum FilterOption: String, Equatable {
     case rick
     case morty
     

@@ -51,18 +51,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         }
     }
     
-    private func addObserver() {
-        let center = NotificationCenter.default
-        observer = center.addObserver(forName: .changeFilterOption,
-                                      object: nil,
-                                      queue: nil,
-                                      using: { [weak self] (notification) in
-                self?.viewModel.filter = notification.userInfo?["filter"] as? FilterOption
-                self?.viewModel.fetchCharacters()
-                center.removeObserver(self?.observer as Any)
-            })
-    }
-    
 }
 
 // MARK: - UILayout
@@ -101,8 +89,8 @@ extension HomeViewController {
     
     @objc
     private func filterButtonTapped() {
-        addObserver()
-        viewModel.navigateToFilterScreen()
+//        addObserver()
+        viewModel.navigateToFilterScreen(fromVC: self)
     }
 }
 
@@ -142,5 +130,13 @@ extension HomeViewController: UITableViewDelegate {
         let item = viewModel.cellItem(for: indexPath)
         let name = item.characterName
         Logger.debug("Selected character: \(name)")
+    }
+}
+
+extension HomeViewController: FilterViewControllerDelegate {
+    func didSendFilter(filter: FilterOption?) {
+        viewModel.filter = filter
+        viewModel.fetchCharacters()
+        Logger.debug("delegate worked")
     }
 }
