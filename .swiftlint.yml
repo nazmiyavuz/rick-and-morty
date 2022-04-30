@@ -1,11 +1,7 @@
-included:
-  - SampleProject
-  - Utilities
-  - DataProvider
-  - UIComponents
 excluded:
   - .git
   - Pods
+  - RickAndMorty/GraphQL/API.swift
 analyzer_rules:
   - unused_declaration
   - unused_import
