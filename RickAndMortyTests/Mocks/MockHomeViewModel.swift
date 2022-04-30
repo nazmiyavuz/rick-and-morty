@@ -6,22 +6,15 @@
 //  Copyright © 2022 Nazmi Yavuz. All rights reserved.
 //
 
-import Foundation
+import UIKit
 @testable import RickAndMorty
 
 final class MockHomeViewModel: HomeViewModel {
     
     private(set) var didGoToFilterScreen = false
     
-    override func navigateToFilterScreen() {
+    override func navigateToFilterScreen(fromVC: UIViewController) {
         didGoToFilterScreen = true
     }
     
-    override func fetchCharacters() {
-        //
-    }
-    
-    override func fetchMoreCharacters() {
-        fetchCharacters()
-    }
 }

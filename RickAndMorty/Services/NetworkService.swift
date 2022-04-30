@@ -20,9 +20,16 @@ protocol NetworkServiceProtocol {
     func fetchCharacters(page: Int, filter: FilterOption?, completion: @escaping CharacterResult)
 }
 
-enum FilterOption: String {
+enum FilterOption: String, Equatable {
     case rick
     case morty
+    
+    init(tag: Int) {
+        switch tag {
+        case 0:  self = .rick
+        default: self = .morty
+        }
+    }
 }
 
 final class NetworkService: NetworkServiceProtocol {

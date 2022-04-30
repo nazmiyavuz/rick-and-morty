@@ -19,6 +19,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         return $0
     }(UITableView())
     
+    private var observer: NSObjectProtocol?
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -36,8 +38,10 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             switch isFirstLoading {
             case true:
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
                     self.viewModel.isFirstLoading = false
+                    self.tableView.reloadData()
+                    guard self.tableView.numberOfRows(inSection: 0) > 0 else { return } // Safety Check
+                    self.tableView.scrollToRow(at: [0, 0], at: .top, animated: true)
                 }
                 
             case false:
@@ -85,8 +89,8 @@ extension HomeViewController {
     
     @objc
     private func filterButtonTapped() {
-//        Logger.debug("tapped")
-        viewModel.navigateToFilterScreen()
+//        addObserver()
+        viewModel.navigateToFilterScreen(fromVC: self)
     }
 }
 
@@ -126,5 +130,13 @@ extension HomeViewController: UITableViewDelegate {
         let item = viewModel.cellItem(for: indexPath)
         let name = item.characterName
         Logger.debug("Selected character: \(name)")
+    }
+}
+
+extension HomeViewController: FilterViewControllerDelegate {
+    func didSendFilter(filter: FilterOption?) {
+        viewModel.filter = filter
+        viewModel.fetchCharacters()
+        Logger.debug("delegate worked")
     }
 }
